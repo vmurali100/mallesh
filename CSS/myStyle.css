@@ -1,0 +1,9 @@
+/* Element selector */
+h1 {
+  color: yellow;
+}
+
+/* Class Selector */
+.myHeading {
+  color: red;
+}
