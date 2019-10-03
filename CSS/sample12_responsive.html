@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      * {
+        margin: 0;
+      }
+      li {
+        width: 150px;
+        background: grey;
+        color: white;
+        margin: 2px;
+        display: inline-block;
+        text-align: center;
+        padding: 10px;
+      }
+      ul {
+        text-align: center;
+      }
+      @media only screen and (max-width: 768px) {
+        li {
+          display: block;
+          width: 97%;
+        }
+        ul {
+          margin: 0;
+          padding: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+      <li>Item 5</li>
+    </ul>
+    <p>I am Para</p>
+  </body>
+</html>

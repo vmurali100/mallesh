@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #leftTop,
+      #leftBottom,
+      #rightTop,
+      #rightBottom {
+        width: 100px;
+        height: 100px;
+        bottom: 0;
+        background: url(sprites.jpg);
+      }
+      div#leftTop {
+        background-position: 0px 110px;
+      }
+      div#rightTop {
+        position: fixed;
+        right: 0;
+        top: 0;
+        background-position: 1px 0px;
+      }
+      div#rightBottom {
+        position: fixed;
+        right: 0;
+        background-position: 105px 0px;
+      }
+      div#leftBottom {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        background-position: 260px -249px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="leftTop"></div>
+    <div id="leftBottom"></div>
+    <div id="rightTop"></div>
+    <div id="rightBottom"></div>
+  </body>
+</html>
