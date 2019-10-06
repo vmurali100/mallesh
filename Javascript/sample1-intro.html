@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <style>
+      .success {
+        background: green;
+        color: white;
+      }
+    </style>
+    <script></script>
+  </head>
+  <body>
+    <h2 id="myHeading">Hello World</h2>
+    <input type="text" id="fname" />
+    <button onclick="addUser()">Add</button>
+    <script>
+      document.getElementById("myHeading").innerHTML =
+        "Hello World from Javascript";
+
+      document.getElementById("myHeading").setAttribute("class", "success");
+      document.getElementById("myHeading").style.color = "red";
+      function addUser() {
+        var fname = document.getElementById("fname").value;
+        if (fname == "") {
+          alert("PLease Enter First Name");
+        }
+      }
+    </script>
+  </body>
+</html>
