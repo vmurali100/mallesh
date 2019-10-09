@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="showNames()">Show Names</button>
+    <button onclick="addaValue()">Add a Value</button>
+    <button onclick="removeValue()">Remove A Value</button>
+    <button onclick="reverseArray()">Reverse</button>
+    <button onclick="sortArray()">Sort</button>
+    <div id="names"></div>
+    <script>
+      var users = ["Murali", "Krisha", "Mallesh", "Ram"];
+      function showNames() {
+        var results = "";
+        for (var i = 0; i < users.length; i++) {
+          results = results + users[i] + "<br>";
+        }
+        document.getElementById("names").innerHTML = results;
+      }
+
+      function sortArray() {
+        users.sort();
+        showValues();
+      }
+      function reverseArray() {
+        users.reverse();
+        showValues();
+      }
+
+      function removeValue() {
+        // users.pop();
+        // POP will remove a value at the Ending
+
+        // users.shift();
+        // shift will remove the Last Value of the Array
+
+        // users.splice(2, 1);
+        // Splice will remove a value at specified Position
+        showValues();
+      }
+      function addaValue() {
+        // users.push("Radha Krishna");
+        // Push Method will add a value at the end of the Array
+        // users.unshift("Radha Krishna");
+        // unshift Method will add a value at the beginning
+        // users.splice(2, 0, "Radha Krishna");
+        // SPlice method will help to add the values in the middle of the Array
+      }
+
+      function showValues() {
+        var results = "";
+        for (var i = 0; i < users.length; i++) {
+          results = results + users[i] + "<br>";
+        }
+        document.getElementById("names").innerHTML = results;
+      }
+    </script>
+  </body>
+</html>
