@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" />
+    <br />
+    <label for="lname">Last Name</label>
+    <input type="text" name="" id="lname" />
+    <button onclick="getValue()">Get Value</button>
+
+    <script>
+      function getValue() {
+        var fname = document.getElementById("fname").value;
+        var lname = document.getElementById("lname").value;
+        console.log(fname);
+        console.log(lname);
+      }
+    </script>
+  </body>
 </html>
