@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="myUl"></ul>
+    <table id="myTable"></table>
+    <script>
+      //   for (i = 0; i < 100; i++) {
+      //     var myLi = document.createElement("li");
+      //     myLi.innerHTML = "Hello I am Li";
+      //     document.getElementById("myUl").appendChild(myLi);
+      //   }
+
+      for (i = 0; i < 10; i++) {
+        // var myTr = document.createElement("tr");
+        // document.getElementById("myTable").appendChild(myTr);
+        var myImg = document.createElement("img");
+        myImg.setAttribute(
+          "src",
+          "https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823__340.jpg"
+        );
+        document.body.appendChild(myImg);
+      }
+    </script>
+  </body>
+</html>

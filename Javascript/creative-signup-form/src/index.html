@@ -94,6 +94,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- //main -->
 
     <script>
+      var users = [];
       function getValues() {
         var user = {
           username: document.getElementById("Username").value,
@@ -101,7 +102,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
           password: document.getElementById("password").value,
           cpassword: document.getElementById("cpassword").value
         };
-        console.log(user);
+        users.push(user);
+        localStorage.setItem("usersInfo", JSON.stringify(users));
+        window.location.replace("usersDetails.html");
       }
     </script>
   </body>
