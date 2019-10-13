@@ -23,7 +23,19 @@
     <script>
       function display() {
         for (i = 0; i < data.length; i++) {
+          // Creating a Row with Document.createElement Method
           var myTr = document.createElement("tr");
+
+          //   Creating a TD to display fname
+          var td1 = document.createElement("td");
+          td1.innerHTML = data[i].fname;
+          myTr.appendChild(td1);
+
+          var td2 = document.createElement("td");
+          td2.innerHTML = data[i].lname;
+          myTr.appendChild(td2);
+
+          //   Adding the Row to the Body
           document.getElementById("myTable").appendChild(myTr);
         }
       }
