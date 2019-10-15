@@ -1,3 +1,4 @@
+var index;
 function displayData(data) {
   document.getElementById("myTable").innerHTML = "";
   for (i = 0; i < data.length; i++) {
@@ -58,9 +59,7 @@ function displayData(data) {
     document.getElementById("myTable").appendChild(myTr);
   }
 }
-function editUser(i) {
-  console.log("editUser called " + i);
-}
+
 function deleteUser(i) {
   data.splice(i, 1);
   displayData(data);
