@@ -32,18 +32,26 @@
     <script>
       var data = [];
       function getData() {
+        //   Step 1 :Create a variable and assaign XMLHttpRequest
         var getInfo = new XMLHttpRequest();
+
+        // Checking Ready state and Status (Ready State should be 4 and Status should be 200)
         getInfo.onreadystatechange = function() {
           if (getInfo.readyState == 4 && getInfo.status == 200) {
             // console.log(getInfo.response);
             data = JSON.parse(getInfo.response);
+            // After Gettng the Data , Calling the displayData function to display in table format
             displayData(data);
           }
         };
+
+        //Configuring the Method And API
         getInfo.open(
           "GET",
           "http://www.filltext.com/?rows=3&fname={firstName}&lname={lastName}&pretty=true"
         );
+
+        //Sending the Request
         getInfo.send();
       }
       getData();
