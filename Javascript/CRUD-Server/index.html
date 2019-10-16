@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table border="1">
+      <thead>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </thead>
+      <tbody id="myTable"></tbody>
+    </table>
+    <br /><br />
+    <form>
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" /><br />
+      <label for="lname">First Name</label>
+      <input type="text" id="lname" /><br />
+      <button type="button" onclick="updateUser()">Update</button>
+      <button type="button" onclick="createUser()">Create</button>
+    </form>
+    <script src="create.js"></script>
+    <script src="read.js"></script>
+    <script src="update.js"></script>
+    <script src="delete.js"></script>
+    <script>
+      var data = [];
+      function getData() {
+        var getInfo = new XMLHttpRequest();
+        getInfo.onreadystatechange = function() {
+          if (getInfo.readyState == 4 && getInfo.status == 200) {
+            // console.log(getInfo.response);
+            data = JSON.parse(getInfo.response);
+            displayData(data);
+          }
+        };
+        getInfo.open(
+          "GET",
+          "http://www.filltext.com/?rows=3&fname={firstName}&lname={lastName}&pretty=true"
+        );
+        getInfo.send();
+      }
+      getData();
+    </script>
+  </body>
+</html>
