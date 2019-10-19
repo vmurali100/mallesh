@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" /><br />
+      <label for="fname">Last Name</label>
+      <input type="text" id="lname" /><br />
+      <button type="button" onclick="addUser()">Add User</button>
+    </form>
+
+    <script>
+      function addUser() {
+        var obj = {
+          fname: document.getElementById("fname").value,
+          lname: document.getElementById("lname").value
+        };
+        console.log(obj);
+
+        var info = new XMLHttpRequest();
+        info.onreadystatechange = function() {
+          if (info.readyState == 4 && info.status == 201) {
+            console.log(info.response);
+            getLatest();
+          }
+        };
+        info.open("POST", "http://localhost:3000/users");
+        info.setRequestHeader("Content-type", "application/json");
+        info.send(JSON.stringify(obj));
+      }
+
+      function getLatest() {
+        var info = new XMLHttpRequest();
+        info.onreadystatechange = function() {
+          if (info.readyState == 4 && info.status == 200) {
+            console.log(info.response);
+          }
+        };
+        info.open("GET", "http://localhost:3000/users");
+        info.send();
+      }
+    </script>
+  </body>
+</html>
