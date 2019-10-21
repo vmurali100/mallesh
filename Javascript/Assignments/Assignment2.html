@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style>
+      img#stateImage {
+        width: 400px;
+        height: 400px;
+        float: left;
+      }
+      ul#myCities {
+        width: 200px;
+        height: 600px;
+        float: left;
+      }
+      #myCities li {
+        font-size: 20px;
+        margin: 4px;
+        cursor: pointer;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="myCities"></ul>
+    <div id="main"></div>
+    <div>
+      <img src="" alt="" id="stateImage" />
+    </div>
+    <script>
+      var states = [
+        {
+          name: "Andhra",
+          capital: "Amaravathi",
+          language: "Telugu",
+          population: "5Crores",
+          image: "https://desap.cgg.gov.in/images/ap1.png"
+        },
+        {
+          name: "Telangana",
+          capital: "Hyderabad",
+          language: "Telugu",
+          population: "4Crores",
+          image:
+            "https://www.telangana.gov.in/PublishingImages/Pages/Home/Telangana-New-Map-33-Districts.png"
+        },
+        {
+          name: "Karnataka",
+          capital: "Bangalore",
+          language: "Kannada",
+          population: "7Crores",
+          image:
+            "https://upload.wikimedia.org/wikipedia/commons/7/74/Karnataka_divisions.svg"
+        },
+        {
+          name: "TamilNadu",
+          capital: "Chennai",
+          language: "Tamil",
+          population: "8Crores",
+          image: "http://www.onefivenine.com/images/StateMaps/Tamilnadu.jpg"
+        },
+        {
+          name: "Kerala",
+          capital: "Kochin",
+          language: "Malayalam",
+          population: "6Crores",
+          image:
+            "http://www.emaxindia.org/wp-content/uploads/2018/03/best-computer-center-in-Kerala.jpg"
+        }
+      ];
+      function showStates() {
+        for (i = 0; i < states.length; i++) {
+          var li = document.createElement("li");
+          li.innerHTML = states[i].name;
+          li.setAttribute("onclick", "showStateInfo(" + i + ")");
+          document.getElementById("myCities").appendChild(li);
+        }
+      }
+      showStates();
+
+      function showStateInfo(i) {
+        console.log(states[i]);
+        var results = "";
+        for (a in states[i]) {
+          if (a !== "image") {
+            results = results + states[i][a] + "<br>";
+          } else {
+            document
+              .getElementById("stateImage")
+              .setAttribute("src", states[i][a]);
+          }
+        }
+        document.getElementById("main").innerHTML = results;
+      }
+    </script>
+  </body>
+</html>

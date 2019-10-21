@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" /> <br />
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname" /> <br />
+      <label for="gender">Gender</label>
+      <input type="radio" name="gender" value="Male" />Male
+      <input type="radio" name="gender" value="Female" />Female <br />
+
+      <label for="subject">Subject</label>
+      <input type="checkbox" name="subject" value="HTML5" />HTML5
+      <input type="checkbox" name="subject" value="CSS3" />CSS3
+      <input type="checkbox" name="subject" value="Javascript" />Javascript
+      <input type="checkbox" name="subject" value="Angular" />Angular <br />
+
+      <button onclick="addUser()" type="button">Add User</button>
+    </form>
+    <script>
+      function addUser() {
+        var obj = {
+          fname: document.getElementById("fname").value,
+          lname: document.getElementById("lname").value
+        };
+        obj.subjects = [];
+
+        // To capture Radio Button Value
+
+        var allRadioButtons = document.getElementsByName("gender");
+        for (i = 0; i < allRadioButtons.length; i++) {
+          if (allRadioButtons[i].checked) {
+            obj.gender = allRadioButtons[i].value;
+          }
+        }
+
+        //To Capture Checkboxes Value
+
+        var allCheckBoxes = document.getElementsByName("subject");
+        for (i = 0; i < allCheckBoxes.length; i++) {
+          if (allCheckBoxes[i].checked) {
+            obj.subjects.push(allCheckBoxes[i].value);
+          }
+        }
+        console.log(obj);
+      }
+    </script>
+  </body>
+</html>

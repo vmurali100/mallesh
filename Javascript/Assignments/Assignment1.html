@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="showCityNames()">Show City Name</button>
+    <ul id="myCities"></ul>
+    <script>
+      var cities = ["Bangalore ", "Chennai", "Kochin", "Amaravathi"];
+      function showCityNames() {
+        for (i = 0; i < cities.length; i++) {
+          var li = document.createElement("li");
+          li.innerHTML = cities[i];
+          document.getElementById("myCities").appendChild(li);
+        }
+      }
+    </script>
+  </body>
+</html>
