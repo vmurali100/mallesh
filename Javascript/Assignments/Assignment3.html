@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="deleteFirst()">Delete First Object</button> <br />
+    <button onclick="deleteLast()">Delete Last Object</button> <br />
+
+    <select name="" id="user"> </select>
+    <button onclick="deleteSelected()">Delete Selected User</button> <br />
+    <button onclick="deleteOdd()">Delete All Odd Rows</button> <br />
+    <button onclick="deleteEve()">Delete All Even Rows</button> <br />
+
+    <table border="1">
+      <thead>
+        <th>No</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Tel</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip</th>
+      </thead>
+      <tbody id="myTable"></tbody>
+    </table>
+    <script src="data.js"></script>
+    <script>
+      function displayData(data) {
+        document.getElementById("myTable").innerHTML = "";
+        document.getElementById("user").innerHTML = "";
+        for (i = 0; i < data.length; i++) {
+          var myTr = document.createElement("tr");
+          var opt = document.createElement("option");
+          opt.innerHTML = i;
+          opt.setAttribute("value", i);
+          document.getElementById("user").appendChild(opt);
+
+          for (a in data[i]) {
+            var td = document.createElement("td");
+            td.innerHTML = data[i][a];
+            myTr.appendChild(td);
+          }
+
+          document.getElementById("myTable").appendChild(myTr);
+        }
+      }
+      displayData(data);
+
+      function deleteFirst() {
+        data.shift();
+        displayData(data);
+      }
+
+      function deleteLast() {
+        data.pop();
+        displayData(data);
+      }
+
+      function deleteSelected() {
+        var index = document.getElementById("user").value;
+        data.splice(index, 1);
+        displayData(data);
+      }
+
+      function deleteOdd() {
+        for (i = 0; i <= data.length; i++) {
+          if (data[i].no % 2) {
+            data.splice(i, 1);
+          }
+        }
+        displayData(data);
+      }
+
+      function deleteEve() {
+        displayData(data);
+        for (i = 0; i < data.length; i++) {
+          if (data[i].no % 2 == 0) {
+            data.splice(i, 1);
+          }
+        }
+        displayData(data);
+      }
+    </script>
+  </body>
+</html>
