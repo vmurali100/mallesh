@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function createUser(getUsers) {
+        setTimeout(function() {
+          users.push("Murali");
+          getUsers();
+        }, 1000);
+      }
+
+      function getUsers(users) {
+        console.log(users);
+      }
+
+      var someVariable = new Promise(function(resolve, reject) {
+        fetch(
+          "http://www.filltext.com/?rows=5&fname={firstName}&lname={lastName}&pretty=true"
+        )
+          .then(function(res) {
+            return res.json();
+          })
+          .then(users => {
+            if (users.length == 0) {
+              reject("NO Data Available In Database");
+            } else {
+              resolve(users);
+            }
+          });
+
+        // if (checckedForMoney) {
+        //   resolve("Ok I am Transefering In Few Minutes");
+        // } else {
+        //   reject("Sorry .. Money Is not Availble Currently in Account");
+        // }
+      });
+
+      someVariable.then(function(response) {
+        console.log(response);
+      });
+
+      function createUser() {
+        let users = [];
+        return new Promise(function(resolve, reject) {
+          users.push("Murali");
+          const result = false;
+
+          if (result == true) {
+            resolve(users);
+          } else {
+            reject("No Users to Display");
+          }
+        });
+      }
+
+      createUser().then(function(data) {
+        getUsers(data);
+      });
+    </script>
+  </body>
+</html>

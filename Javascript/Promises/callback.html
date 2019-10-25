@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var users = [];
+      //   Will Add User After 2sec
+      function createUser(getUsers) {
+        setTimeout(function() {
+          users.push("Murali");
+          getUsers();
+        }, 1000);
+      }
+
+      //Will try to get the Users Immedietly
+      function getUsers() {
+        console.log(users);
+      }
+
+      createUser(getUsers); // TO Complete this Function we need 2sec
+      //   getUsers(); //This will execute Instantly
+    </script>
+  </body>
+</html>
