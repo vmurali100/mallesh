@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Literal Way Of Creating Object
+      var person = {
+        fname: "Murali"
+      };
+      var person2 = {
+        fname: "Ram"
+      };
+
+      //Function or Contructor Function
+      function Person(fname) {
+        this.fname = fname;
+      }
+
+      Person.prototype.showFullName = function() {
+        console.log("Hello " + this.fname + " How Are you");
+      };
+      Person.prototype.company = "Incedo";
+      var person1 = new Person("Krishna");
+      var person2 = new Person("Ram Krishna");
+
+      console.log(person);
+      console.log(person1);
+      person1.showFullName();
+      person2.showFullName();
+    </script>
+  </body>
+</html>

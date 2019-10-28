@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var employees = [
+        {
+          comapnyName: "ABC",
+          companyAddress: "Whitefield",
+          city: "Bangalroe",
+          state: "KARNATAKA",
+          empName: "Murali",
+          dept: "XYZ",
+          Salary: "30L"
+        },
+        {
+          comapnyName: "ABC",
+          companyAddress: "Whitefield",
+          city: "Bangalroe",
+          state: "KARNATAKA",
+          empName: "Mallesh",
+          dept: "ABCD",
+          Salary: "20L"
+        },
+        {
+          comapnyName: "ABC",
+          companyAddress: "Whitefield",
+          city: "Bangalroe",
+          state: "KARNATAKA",
+          empName: "Ravi Tejs",
+          dept: "ACD",
+          Salary: "15L"
+        }
+      ];
+
+      //Constructor Function
+      function Employee(empName, dept, salary) {
+        this.comapnyName = "ABC";
+        this.companyAddress = "Whitefield";
+        this.city = "Bangalroe";
+        this.state = "KARNATAKA";
+        this.empName = empName;
+        this.dept = dept;
+        this.salary = salary;
+      }
+
+      //   Adding Properties with Prototype
+      Employee.prototype.comapnyPFNo = "ABCDFEG";
+
+      //Creating Object with Instance of the Constructor Function
+      var emp1 = new Employee("Murali", "ABC", "30L");
+      var emp2 = new Employee("Mallesh", "XYZ", "20L");
+      var emp3 = new Employee("Ravi", "CDB", "10L");
+
+      console.log(emp1);
+      console.log(emp2);
+      console.log(emp3);
+    </script>
+  </body>
+</html>
