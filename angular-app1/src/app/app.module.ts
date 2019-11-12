@@ -11,6 +11,8 @@ import { Newsample3Component } from "./newsample3/newsample3.component";
 import { Angular1Component } from "./angular1/angular1.component";
 import { HelloworldComponent } from "./helloworld/helloworld.component";
 import { MalleshComponent } from "./mallesh/mallesh.component";
+import { Parent1Component } from './ChildToParent/parent1/parent1.component';
+import { Child1Component } from './ChildToParent/child1/child1.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { MalleshComponent } from "./mallesh/mallesh.component";
     Newsample2Component,
     Newsample3Component,
     Angular1Component,
-    HelloworldComponent
+    HelloworldComponent,
+    Parent1Component,
+    Child1Component
   ],
   imports: [BrowserModule],
   providers: [],

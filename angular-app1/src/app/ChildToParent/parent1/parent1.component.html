@@ -1,0 +1,7 @@
+<p>parent1 works!</p>
+<hr />
+<app-child1
+  (customEvent)="receiveMessageData($event)"
+  (customEventObj)="receiveObjFromChild($event)"
+  (customEventArray)="receiveArrayFromChild($event)"
+></app-child1>

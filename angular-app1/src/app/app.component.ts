@@ -17,7 +17,5 @@ export class AppComponent {
   };
   personValues = Object.values(this.person); //Object.values is Js Built in Method which converts Object in to Array
 
-  ngOnInit() {
-    console.log(this.personValues);
-  }
+  ngOnInit() {}
 }
