@@ -13,6 +13,8 @@ import { HelloworldComponent } from "./helloworld/helloworld.component";
 import { MalleshComponent } from "./mallesh/mallesh.component";
 import { Parent1Component } from './ChildToParent/parent1/parent1.component';
 import { Child1Component } from './ChildToParent/child1/child1.component';
+import { Sibling1Component } from './SiblingsComponents/sibling1/sibling1.component';
+import { Sibling2Component } from './SiblingsComponents/sibling2/sibling2.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { Child1Component } from './ChildToParent/child1/child1.component';
     Angular1Component,
     HelloworldComponent,
     Parent1Component,
-    Child1Component
+    Child1Component,
+    Sibling1Component,
+    Sibling2Component
   ],
   imports: [BrowserModule],
   providers: [],
