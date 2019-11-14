@@ -1,0 +1,25 @@
+<form #userForm="ngForm">
+  <label for="userName">User Name : </label>
+  <input type="text" name="userName" ngModel /> <br />
+  <label for="email">Email : </label>
+  <input type="text" name="email" ngModel /><br />
+  <button (click)="addUser(userForm)">Add</button>
+</form>
+<hr />
+
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>User Name</th>
+    <th>Email</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <tr *ngFor="let obj of allUsers">
+    <td>{{ obj.id }}</td>
+    <td>{{ obj.userName }}</td>
+    <td>{{ obj.email }}</td>
+    <td><button (click)="editUser(obj)">Edit</button></td>
+    <td><button (click)="deleteUser(obj)">Delete</button></td>
+  </tr>
+</table>
