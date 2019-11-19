@@ -1,6 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { AppComponent } from "./app.component";
 import { MuraliComponent } from "./murali.component";
@@ -17,6 +17,8 @@ import { Child1Component } from "./ChildToParent/child1/child1.component";
 import { Sibling1Component } from "./SiblingsComponents/sibling1/sibling1.component";
 import { Sibling2Component } from "./SiblingsComponents/sibling2/sibling2.component";
 import { MyformComponent } from "./Forms/myform/myform.component";
+import { ModuleFormComponent } from "./ModuleDrivenForm/module-form/module-form.component";
+import { UsersTableComponent } from './ModuleDrivenForm/users-table/users-table.component';
 
 @NgModule({
   declarations: [
@@ -34,9 +36,11 @@ import { MyformComponent } from "./Forms/myform/myform.component";
     Child1Component,
     Sibling1Component,
     Sibling2Component,
-    MyformComponent
+    MyformComponent,
+    ModuleFormComponent,
+    UsersTableComponent
   ],
-  imports: [BrowserModule, FormsModule, HttpClientModule],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
 })

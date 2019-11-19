@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "fname": "Arunama MK",
+      "lname": "Youngamam",
+      "id": 1
+    },
+    {
+      "fname": "Murali Reddy",
+      "lname": "Krishna",
+      "id": 2
+    },
+    {
+      "fname": "Leelavathi",
+      "lname": "KM",
+      "id": 3
+    },
+    {
+      "fname": "Rqam",
+      "lname": "Ravi",
+      "id": 4
+    }
+  ]
+}
