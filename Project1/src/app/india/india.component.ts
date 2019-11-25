@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { PlayersService } from "../players.service";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-india",

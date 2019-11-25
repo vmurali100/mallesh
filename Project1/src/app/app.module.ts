@@ -6,10 +6,12 @@ import { IndiaComponent } from "./india/india.component";
 import { BanglaComponent } from "./bangla/bangla.component";
 import { SrilankaComponent } from "./srilanka/srilanka.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+import { PlayerDetailsComponent } from "./player-details/player-details.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "india", pathMatch: "full" },
   { path: "india", component: IndiaComponent },
+  { path: "india/:player", component: PlayerDetailsComponent },
   { path: "bangla", component: BanglaComponent },
   { path: "srilanka", component: SrilankaComponent },
   { path: "**", component: PageNotFoundComponent }
@@ -21,7 +23,8 @@ const routes: Routes = [
     IndiaComponent,
     BanglaComponent,
     SrilankaComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    PlayerDetailsComponent
   ],
   imports: [BrowserModule, RouterModule.forRoot(routes)],
   providers: [],
