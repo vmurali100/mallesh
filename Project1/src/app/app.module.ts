@@ -5,11 +5,14 @@ import { AppComponent } from "./app.component";
 import { IndiaComponent } from "./india/india.component";
 import { BanglaComponent } from "./bangla/bangla.component";
 import { SrilankaComponent } from "./srilanka/srilanka.component";
+import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 
 const routes: Routes = [
+  { path: "", redirectTo: "india", pathMatch: "full" },
   { path: "india", component: IndiaComponent },
   { path: "bangla", component: BanglaComponent },
-  { path: "srilanka", component: SrilankaComponent }
+  { path: "srilanka", component: SrilankaComponent },
+  { path: "**", component: PageNotFoundComponent }
 ];
 
 @NgModule({
@@ -17,7 +20,8 @@ const routes: Routes = [
     AppComponent,
     IndiaComponent,
     BanglaComponent,
-    SrilankaComponent
+    SrilankaComponent,
+    PageNotFoundComponent
   ],
   imports: [BrowserModule, RouterModule.forRoot(routes)],
   providers: [],

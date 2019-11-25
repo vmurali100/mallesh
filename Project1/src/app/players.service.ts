@@ -7,11 +7,16 @@ export class PlayersService {
   constructor() {}
   getPlayers(tName) {
     let playersInfo = [];
-    players.map(team => {
-      if (tName == team.teamName) {
-        playersInfo = team.playersNames;
+    // players.map(team => {
+    //   if (tName == team.teamName) {
+    //     playersInfo = team.playersNames;
+    //   }
+    // });
+    for (let i = 0; i < players.length; i++) {
+      if (tName == players[i].teamName) {
+        playersInfo = players[i].playersNames;
       }
-    });
+    }
     return playersInfo;
   }
 }
