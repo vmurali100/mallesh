@@ -10,6 +10,7 @@ import { PlayersService } from "../players.service";
 export class PlayerDetailsComponent implements OnInit {
   playerName: any;
   playerStats: any;
+  playersdetails: any;
   constructor(
     private activeRouter: ActivatedRoute,
     private plService: PlayersService,
@@ -20,7 +21,7 @@ export class PlayerDetailsComponent implements OnInit {
     this.activeRouter.params.subscribe(param => {
       console.log(param.player);
       this.playerName = param.player;
-      this.playerStats = this.plService.getPlayerDetails(
+      this.playersdetails = this.plService.getPlayerDetails(
         "India",
         this.playerName
       );

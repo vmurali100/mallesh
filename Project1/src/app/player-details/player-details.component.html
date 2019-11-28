@@ -1,7 +1,15 @@
 <p>player-details works!</p>
-
-<h2>Total ODI's Played By : {{ playerName }} is : {{ playerStats.ODI }}</h2>
-<h2>Total T20's Played By : {{ playerName }} is : {{ playerStats.T20 }}</h2>
-<h2>Total Test's Played By : {{ playerName }} is : {{ playerStats.Tests }}</h2>
+<img src="{{ playersdetails.pic }}" alt="" style="width: 400px;" />
+<p>Player Name : {{ playersdetails.name }}</p>
+<h2>
+  Total ODI's Played By : {{ playerName }} is : {{ playersdetails.stats.ODI }}
+</h2>
+<h2>
+  Total T20's Played By : {{ playerName }} is : {{ playersdetails.stats.T20 }}
+</h2>
+<h2>
+  Total Test's Played By : {{ playerName }} is :
+  {{ playersdetails.stats.Tests }}
+</h2>
 
 <button class="btn btn-info" (click)="goBack()">GO Back</button>
